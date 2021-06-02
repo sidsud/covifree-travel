@@ -31,7 +31,8 @@
             {
                "name" : "Goldcoast",
                "restrictedOriginCities" : [
-                  "Geelong"
+                  "Geelong",
+                  "Melbourne"
                ]
             }
          ]
