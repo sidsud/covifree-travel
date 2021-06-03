@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.disabled {
+  background-color: gray !important;
+  cursor: auto !important;
+}
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
