@@ -21,8 +21,8 @@ ADD COLUMN `vaccine_name` VARCHAR(45) NULL AFTER `vaccine_recevied`;
 
     if (isset($_POST['submit'])) {
         $disease = implode(",",$_POST['disease']); 
-        $disease_described = $_POST['disease_described'];
-        $duration_disease = $_POST['duration_disease'];
+       // $disease_described = $_POST['disease_described'];
+        //$duration_disease = $_POST['duration_disease'];
         $vaccination_file = $_POST['vaccination_file'];
         $medication = $_POST['medication'];
         $medication_described = $_POST['medication_described'];
@@ -33,11 +33,11 @@ ADD COLUMN `vaccine_name` VARCHAR(45) NULL AFTER `vaccine_recevied`;
 
       //  $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`allergies`, `side_effect`, `side_effect_details`) VALUES ('$allergies','$side_effect','$side_effect_details')");
 
-     $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`disease`, `disease_described`, `duration_disease`, `vaccination_file`, `medication`, `medication_described`, `fever`, `fever_described`,'vaccine_recevied','vaccine_name') VALUES ('$disease','$disease_described','$duration_disease','$vaccination_file','$medication','$medication_described','$fever','$fever_described','$vaccine_recevied','$vaccine_name'),''");
+     $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`disease`, `vaccination_file`, `medication`, `medication_described`, `fever`, `fever_described`,`vaccine_recevied`,`vaccine_name`) VALUES ('$disease','$vaccination_file','$medication','$medication_described','$fever','$fever_described','$vaccine_recevied','$vaccine_name')");
 
 
         if (!$insert) {
-            echo "Records added successfully.";
+            echo "Problem in adding records." . mysqli_error($db);
         } else {
             if ($_POST['submit'] === 'Continue') {
                 echo "Records added successfully.";

@@ -515,7 +515,7 @@
    <meta property="og:image:height" content="630" />
    <meta property="og:title" content="Covifree Travel" />
    <meta property="og:type" content="website" />
-   <meta property="og:description" content="Find cheap flights to Trivandrum from ₹&nbsp;4,757. Search and compare the best real-time prices for your round-trip, one-way, or last-minute flight to Trivandrum." />
+   <meta property="og:description" content="Find cheap flights to Trivandrum from ?&nbsp;4,757. Search and compare the best real-time prices for your round-trip, one-way, or last-minute flight to Trivandrum." />
    <meta property="og:url" content="https://www.in.cheapflights.com/flights-to-Thiruvananthapuram/" />
    <meta property="og:site_name" content="Cheapflights" />
    <meta property="fb:pages" content="90811893045" />
@@ -523,7 +523,7 @@
    <meta name="twitter:site" content="@Cheapflights" />
    <meta name="twitter:creator" content="@Cheapflights" />
    <meta name="twitter:title" content="Covifree Travel" />
-   <meta name="twitter:description" content="Find cheap flights to Trivandrum from ₹&nbsp;4,757. Search and compare the best real-time prices for your round-trip, one-way, or last-minute flight to Trivandrum." />
+   <meta name="twitter:description" content="Find cheap flights to Trivandrum from ?&nbsp;4,757. Search and compare the best real-time prices for your round-trip, one-way, or last-minute flight to Trivandrum." />
    <meta name="twitter:image:src" content="https://content.r9cdn.net/rimg/dimg/60/71/45d9caab-city-49393-167a75db235.jpg?width=440&height=220&crop=false" />
    <meta name="kayak_page" content="flight,static-flight-route,destination" />
    <meta name="robots" content="noodp" />
@@ -559,7 +559,7 @@
    <link rel="preconnect" href="//www.google-analytics.com" />
    <link rel="dns-prefetch" href="//www.google-analytics.com" />
    <title>Covifree Travel</title>
-   <meta name="description" content="Find cheap flights to Trivandrum from ₹&nbsp;4,757. Search and compare the best real-time prices for your round-trip, one-way, or last-minute flight to Trivandrum." />
+   <meta name="description" content="Find cheap flights to Trivandrum from ?&nbsp;4,757. Search and compare the best real-time prices for your round-trip, one-way, or last-minute flight to Trivandrum." />
    <style class="_-styletron_hydrate_"></style>
 </head>
 

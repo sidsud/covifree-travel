@@ -144,7 +144,7 @@ mysqli_close($db); // Close connection
     <div class="row">
         <!-- <input type="submit" value="Continue and Save"> -->
         <input type="button" class="cancel" name="cancel" value="Cancel">
-        <!-- <input type="submit" name="submit" value="Save"> -->
+         <input type="submit" name="submit" value="Save">
         <input type="submit" name="submit" value="Continue">
       <!-- <input  value=""> -->
     </div>

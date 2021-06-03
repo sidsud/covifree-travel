@@ -153,14 +153,14 @@ mysqli_close($db); // Close connection
         </div>
       </div>
 
-      <div class="row">
+   <!--   <div class="row">
         <div class="col-25 ">
           <label for="lname">Have you received the vaccination for selected disease? If so please list the vaccine name</label>
         </div>
         <div class="col-75 list_vaccination">
           <input type="text" id="mname" name="middel_name" readonly value="<?php echo $medical_mst['disease_described']; ?>">
         </div>
-      </div>
+      </div> 
 
       <div class="row">
         <div class="col-25 ">
@@ -169,7 +169,7 @@ mysqli_close($db); // Close connection
         <div class="col-75 list_vaccination">
           <input type="text" id="mname" name="middel_name" readonly value="<?php echo $medical_mst['duration_disease']; ?>">
         </div>
-      </div>
+      </div> -->
 
       <div class="row">
         <div class="col-25 ">
