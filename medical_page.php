@@ -21,10 +21,12 @@
         $medication_described = $_POST['medication_described'];
         $fever = $_POST['fever'];
         $fever_described = $_POST['fever_described'];
+        $vaccine_recevied= $_POST['vaccine_recevied'];
+        $vaccine_name= $_POST['vaccine_name'];
 
       //  $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`allergies`, `side_effect`, `side_effect_details`) VALUES ('$allergies','$side_effect','$side_effect_details')");
 
-     $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`disease`, `disease_described`, `duration_disease`, `vaccination_file`, `medication`, `medication_described`, `fever`, `fever_described`) VALUES ('$disease','$disease_described','$duration_disease','$vaccination_file','$medication','$medication_described','$fever','$fever_described')");
+     $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`disease`, `disease_described`, `duration_disease`, `vaccination_file`, `medication`, `medication_described`, `fever`, `fever_described`,'vaccine_recevied','vaccine_name') VALUES ('$disease','$disease_described','$duration_disease','$vaccination_file','$medication','$medication_described','$fever','$fever_described','$vaccine_recevied','$vaccine_name'),''");
 
 
         if (!$insert) {
@@ -77,29 +79,30 @@
                 <div class="col-75">
                     <input type="checkbox"  value="Covid" name="disease[]"> Covid  <br>
                     <input type="checkbox" value="SARS" name="disease[]"> SARS <br>
-                    <input type="checkbox" value="Influencers" name="disease[]"> Influencers <br>
-                    <input type="checkbox" value="Tuberculosis" name="disease[]"> Tuberculosis <br>
-                    <input type="checkbox" value="lung cancers" name="disease[]"> lung cancers
+                    <input type="checkbox" value="Influenza" name="disease[]"> Influenza <br>
+                    <input type="checkbox" value="Plague" name="disease[]"> Plague
                 
                 </div>
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="fname">Have you received the vaccination for selected disease? If so please list the vaccine name</label>
+                    <label for="fname">Have you received the vaccination for selected disease?</label>
                 </div>
                 <div class="col-75">
-                <input type="text" id="disease" required name="disease_described">
+                    <input type="radio" name="vaccine_recevied" value="yes"> Yes 
+                    <input type="radio"  name="vaccine_recevied" checked value="no"> No 
                 </div>
-            </div>
-            <div class="row">
+            
+            <div class="row" style="display: none;" id="vaccine_recevied">
                 <div class="col-25">
-                    <label for="fname">Describe the time and duration of each disease</label>
+                    <label for="lname">Please Select the Vaccine Name</label>
                 </div>
+                
+            </div>
                 <div class="col-75">
-                <input type="text" id="duration_disease" required name="duration_disease">
+                <input type="text" id="disease" required name="vaccine_name">
                 </div>
             </div>
-           
 
             <div class="row">
                 <div class="col-25">
@@ -113,7 +116,7 @@
 
             <div class="row" style="display: none;" id="medication_described">
                 <div class="col-25">
-                    <label for="lname">Described</label>
+                    <label for="lname">Describe</label>
                 </div>
                 <div class="col-75">
                 <input type="text" required  name="medication_described">
@@ -132,10 +135,10 @@
 
             <div class="row" style="display: none;" id="fever_described">
                 <div class="col-25">
-                    <label for="lname">Described</label>
+                    <label for="lname">Describe</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" name="fever_described" placeholder="Describe">
+                    <input type="text" name="fever_described" placeholder="">
                 </div>
             </div>
 
@@ -150,7 +153,7 @@
             </div>
 
             <div class="row">
-                <input type="button" class="cancel" name="cancel" value="cancel">
+                <input type="button" class="cancel" name="cancel" value="Cancel">
                 <input type="submit" name="submit" value="Save">
                 <input type="submit" name="submit" value="Continue">
             </div>

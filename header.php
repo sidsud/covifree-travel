@@ -18,13 +18,17 @@
 
    var states = [
       "Queensland",
-      "Victoria"
+      "Victoria",
+      "South Australia",
+      "Western Australia",
+      "Tasmania",
+      "New South Wales"
    ]
    var stateCities = {
       "Queensland": {
          "cities": [
             {
-               "name" : "Brisbane",
+               "name" : "Brisbane",     
                "restrictedOriginCities" : [
                ]
             },
@@ -34,7 +38,64 @@
                   "Geelong",
                   "Melbourne"
                ]
+            },
+            {
+               "name" : "Toowoomba",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Townsville",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Cairns",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Mackay",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Rockhampton",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Gladstone",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Warwick",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Logan",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
             }
+         
          ]
       },
       "Victoria": {
@@ -42,16 +103,333 @@
             {
                "name" : "Melbourne",
                "restrictedOriginCities" : [
-
                ]
             },
             {
                "name" : "Geelong",
                "restrictedOriginCities" : [
                ]
-            }
+            },
+            {
+               "name" : "Bendigo",
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Ballarat",
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Mildura",
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Shepparton",
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Wodonga",
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Sale",
+               "restrictedOriginCities" : [
+               ]
+            },
          ]
-      }
+      },
+      "South Australia": {
+         "cities": [
+            {
+               "name" : "Adelaide",     
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Mount Gambier",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Port Lincoln",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Whyalla",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Port Augusta",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Gawler",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Port Pirie",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Victor Harbor",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Mount Barker",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Goolwa",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            }  
+         ]
+      },
+      "Western Australia": {
+         "cities": [
+            {
+               "name" : "Perth",     
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Albany",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Kalgoorlie- Boulder",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Bunbury",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Busselton",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Geraldton",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Broome",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Port Hedland",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Mandurah",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Derby",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            }  
+         ]
+      },
+      "Tasmania": {
+         "cities": [
+            {
+               "name" : "Hobart",     
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Launceston",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Devonport",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Burnie",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "George Town",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Queenstown",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Ulverstone",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Wynyard",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Deloraine",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Bridport",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            }  
+         ]
+      },
+      "New South Wales": {
+         "cities": [
+            {
+               "name" : "Sydney",     
+               "restrictedOriginCities" : [
+               ]
+            },
+            {
+               "name" : "Newcastle",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Wagga Wagga",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Wollongong",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Dubbo",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Tamworth",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Orange",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Broken Hill",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Bathurst",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            },
+            {
+               "name" : "Albury",
+               "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
+               ]
+            }  
+         ]
+      },
    }
    </script>
    <link rel="stylesheet" href="https://content.r9cdn.net/res/combined.css?v=c49ec7501dccfd2440520fd54f12a75163b7691a-keel-headings-update&cluster=5" data-type="page" />

@@ -82,7 +82,7 @@ mysqli_close($db); // Close connection
     <div class="row text-center">
     <img class="image" src="http://localhost/righttick.jpg"></img>
     <br><br>
-        <textarea readonly id="fname" rows="5" required name="first_name" placeholder="Your name..">Congratulation! Your application has been processed and sent for review.(An email confirmation has been sent to your email id. you will be notified via email whether you are travel complaint or not)
+        <textarea readonly id="fname" rows="5" required name="first_name" placeholder="Your name..">Congratulation! You Are Eligible to Travel to Your Desired Destination. Please Proceed to the Booking Page.
         </textarea>
     </div>
 

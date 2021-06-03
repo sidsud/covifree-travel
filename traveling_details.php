@@ -63,12 +63,12 @@ mysqli_close($db); // Close connection
           <label for="fname">Passport Number</label>
         </div>
         <div class="col-75">
-          <input type="text" id="passport_number" required name="passport_number" placeholder="Number">
+          <input type="text" id="passport_number"  name="passport_number" placeholder="Number">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">State Traveling to</label>
+          <label for="lname">State Traveling To</label>
         </div>
         <div class="col-75">
           <select id="state" required name="state" placeholder="State">
@@ -77,7 +77,7 @@ mysqli_close($db); // Close connection
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">City Traveling to</label>
+          <label for="lname">City Traveling To</label>
         </div>
         <div class="col-75">
           <select id="city" required name="city" placeholder="City">
@@ -98,14 +98,18 @@ mysqli_close($db); // Close connection
         </div>
         <div class="col-75">
           <select required placeholder="Purpose" name="purpose">
-            <option value="Work">Work</option>
+            <option value="Business">Business</option>
+            <option value="Study">Study</option>
+            <option value="Seminar">Seminar</option>
+            <option value="Leisure">Leisure</option>
+            <option value="Social">Social</option>
           </select>
         </div>
       </div>
       <br>
       <div class="row">
         <!-- <input type="submit" value="Continue and Save"> -->
-        <input type="button" class="cancel" name="cancel" value="cancel">
+        <input type="button" class="cancel" name="cancel" value="Cancel">
         <input type="submit" name="submit" value="Save">
         <input type="submit" name="submit" value="Continue">
         <!-- <input  value=""> -->

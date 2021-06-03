@@ -83,7 +83,7 @@ mysqli_close($db); // Close connection
         <label for="fname">First Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" required name="first_name" placeholder="First name">
+        <input type="text" id="fname" required name="first_name" placeholder="First Name">
       </div>
     </div>
     <div class="row">
@@ -91,7 +91,7 @@ mysqli_close($db); // Close connection
         <label for="lname">Middle Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="mname" required name="middel_name" placeholder="Middle name">
+        <input type="text" id="mname"  name="middel_name" placeholder="Middle name">
       </div>
     </div>
     <div class="row">
@@ -143,7 +143,7 @@ mysqli_close($db); // Close connection
       <br>
     <div class="row">
         <!-- <input type="submit" value="Continue and Save"> -->
-        <input type="button" class="cancel" name="cancel" value="cancel">
+        <input type="button" class="cancel" name="cancel" value="Cancel">
         <!-- <input type="submit" name="submit" value="Save"> -->
         <input type="submit" name="submit" value="Continue">
       <!-- <input  value=""> -->
