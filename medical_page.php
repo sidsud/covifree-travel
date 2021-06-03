@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 
+<!--
+
+    ALTER TABLE `hetal_db`.`medical_mst` 
+ADD COLUMN `vaccine_recevied` VARCHAR(45) NOT NULL DEFAULT 'No' AFTER `updated_at`,
+ADD COLUMN `vaccine_name` VARCHAR(45) NULL AFTER `vaccine_recevied`;
+
+-->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -175,6 +182,14 @@
             $("#medication_described").css('display', 'block');
         } else {
             $("#medication_described").css('display', 'none');
+        }
+    });
+
+    $("input[name='vaccine_recevied']").change(function() {
+        if ($(this).val() == "yes") {
+            $("#vaccine_name").css('display', 'block');
+        } else {
+            $("#vaccine_name").css('display', 'none');
         }
     });
 
