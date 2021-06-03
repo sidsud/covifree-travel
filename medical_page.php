@@ -84,23 +84,23 @@
                 
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col-25">
-                    <label for="fname">Have you received the vaccination for selected disease?</label>
+                    <label for="fname">Have you recevied the vaccination for selected disease.?</label>
                 </div>
                 <div class="col-75">
-                    <input type="radio" name="vaccine_recevied" value="yes"> Yes 
-                    <input type="radio"  name="vaccine_recevied" checked value="no"> No 
+                    <input type="radio" name="vaccine_recevied" value="yes"> Yes
+                    <input type="radio" name="vaccine_recevied" checked value="no"> No
                 </div>
-            
-            <div class="row" style="display: none;" id="vaccine_recevied">
+            </div>
+
+            <div class="row" style="display: none;" id="vaccine_name">
                 <div class="col-25">
                     <label for="lname">Please Select the Vaccine Name</label>
                 </div>
-                
-            </div>
                 <div class="col-75">
-                <input type="text" id="disease" required name="vaccine_name">
+                <input type="text" required name="vaccine_name">
                 </div>
             </div>
 
@@ -119,7 +119,7 @@
                     <label for="lname">Describe</label>
                 </div>
                 <div class="col-75">
-                <input type="text" required  name="medication_described">
+                <input type="text" required name="medication_described">
                 </div>
             </div>
 
