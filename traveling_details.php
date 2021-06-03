@@ -82,6 +82,7 @@ mysqli_close($db); // Close connection
         <div class="col-75">
           <select id="city" required name="city" placeholder="City">
           </select>
+          <span id="citySelectError" style="color:red"></span>
         </div>
       </div>
       <div class="row">
@@ -110,8 +111,8 @@ mysqli_close($db); // Close connection
       <div class="row">
         <!-- <input type="submit" value="Continue and Save"> -->
         <input type="button" class="cancel" name="cancel" value="Cancel">
-        <input type="submit" name="submit" value="Save">
-        <input type="submit" name="submit" value="Continue">
+        <input type="submit" name="submit" value="Save" id="saveBtn">
+        <input type="submit" name="submit" value="Continue" id="continueBtn">
         <!-- <input  value=""> -->
       </div>
     </form>
@@ -151,21 +152,45 @@ var residential_address_city = getParameterByName('residential_address_city');
     $.each(stateCities[selectedState].cities, function( index, value ) {
       $("#city").append(new Option(value.name, value.name));
     });
-    
+    validateCity();
   });
 
   $( "#city" ).change(function() {
-    var selectedCity = $( "#city" ).val();
-    var selectedState = $( "#state" ).val();
-    $.each(stateCities[selectedState].cities, function( index, value ) {
-      if(value.name === selectedCity){
-        if(value.restrictedOriginCities.includes(residential_address_city)){
-          alert("You can't travel to " + value.name + " from " + residential_address_city);
-        }
-      }
-    });
+    validateCity();
   });
 
+  $( document ).ready(function() {
+    validateCity();
+  });
 
+  function validateCity(){
+    var selectedCity = $( "#city" ).val();
+    var selectedState = $( "#state" ).val();
+    $( "#continueBtn,#saveBtn").removeAttr("disabled");
+    $( "#continueBtn,#saveBtn").removeClass("disabled");
+    if(selectedState === '-- SELECT --'){
+      console.log("Value is default");
+      disableSubmit();
+    } else {
+      console.log("In else part");
+      $( "#continueBtn,#saveBtn").removeAttr("disabled");
+      $( "#continueBtn,#saveBtn").removeClass("disabled");
+      $( "#citySelectError").html("");
+      $.each(stateCities[selectedState].cities, function( index, value ) {
+        if(value.name === selectedCity){
+          if(value.restrictedOriginCities.includes(residential_address_city)){
+            disableSubmit();
+            var error = "You can't travel to " + value.name + " from " + residential_address_city;
+            $( "#citySelectError").html(error);
+          }
+        }
+      });
+    }
+  }
+
+  function disableSubmit(){
+          $( "#continueBtn,#saveBtn").attr("disabled", "disabled");
+          $( "#continueBtn,#saveBtn").addClass("disabled");
+  }
 
 </script>
