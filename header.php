@@ -30,6 +30,8 @@
             {
                "name" : "Brisbane",     
                "restrictedOriginCities" : [
+                  "Geelong",
+                  "Melbourne"
                ]
             },
             {
@@ -576,7 +578,7 @@
                   <div class="header pres-brand-gradient">
                      <div class="kml-layout mod-wide edges-m mobile-edges header__container c31EJ">
                         <div class="ui-layout-HeaderMainLogo normal-on-std-size main-logo--mobile inverted-logo" style="width:24%"">
-                                             <a class=" main-logo__link" href="/" itemProp="https://schema.org/logo" aria-label="Cheapflights" style="width: 95%">
+                                             <a class=" main-logo__link" href="home_page.php" itemProp="https://schema.org/logo" aria-label="Cheapflights" style="width: 95%">
                            <div class="main-logo__logo has-compact-logo inverted-logo">
                               <span height="auto" cleanup="" class="svg logo-image" style="color: white;font-size:27px; !important">
                                  Covifree Travel
@@ -599,7 +601,8 @@
                               <li class="navigation-menu__item navigation-menu__item--all"><a aria-label="Search for flights" class="ui-layout-header-HeaderNavLink theme-dark"><span class="link-inner-text"><span>Flights</span></span></a></li>
                               <li class="navigation-menu__item navigation-menu__item--s"><a aria-label="Search for hotels" class="ui-layout-header-HeaderNavLink theme-dark"><span class="link-inner-text"><span>Stays</span></span></a></li>
                               <li class="navigation-menu__item navigation-menu__item--m"><a aria-label="Search for cars" class="ui-layout-header-HeaderNavLink theme-dark"><span class="link-inner-text"><span>Car Rental</span></span></a></li>
-                              <li class="navigation-menu__item navigation-menu__item--s"><a aria-label="Search for activities" class="ui-layout-header-HeaderNavLink theme-dark"><span class="link-inner-text"><span>Things to do</span></span><span class="info-marker info-marker--inverted">NEW</span></a></li>
+                              <li class="navigation-menu__item navigation-menu__item--s"><a href="customer_details.php" aria-label="Search for activities" class="ui-layout-header-HeaderNavLink theme-dark"><span class="link-inner-text"><span>Check Eligibility</span></span></span></a></li>
+                              
                               <li class="navigation-menu__item navigation-menu__item--more">
                                  <div class="common-layout-react-HeaderMoreLink more-nav--collapsible more-nav--empty-m">
                                     <div>
@@ -618,6 +621,9 @@
                               </li>
                            </ul>
                            <ul class="navigation-menu__main navigation-menu__main--mobile"></ul>
+                           <?php
+                           if(!isset($_SESSION['auth'])) {
+                           ?>
                            <div class="navigation-menu__account">
                               <div class="common-layout-react-HeaderAccountWrapper theme-dark account--collapsible">
                                  <div>
@@ -633,17 +639,45 @@
                                                    </span>
                                                 </span>
                                              </div>
-                                             <div class="menu-label__wrapper"><span class="menu-label">Sign in</span></div>
+                                             <div class="menu-label__wrapper"><a href= "login.php"span class="menu-label">Sign in</span></a></div>
                                           </span>
                                        </button>
                                     </span>
                                  </div>
                               </div>
                            </div>
+                           <?php
+                           } else {
+                              ?>
+                              <div class="navigation-menu__account">
+                              <div class="common-layout-react-HeaderAccountWrapper theme-dark account--collapsible">
+                                 <div>
+                                    <span>
+                                       <button aria-label="Sign out" class="ui-layout-header-HeaderNavLink button-no-standard-style menu__wrapper account-button theme-dark strong">
+                                          <span class="auth-account-wrap">
+                                             <div class="menu-icon__wrapper menu-icon__wrapper--auth">
+                                                <span class="menu-icon">
+                                                   <span cleanup="" class="svg" style="transform:translate3d(0,0,0);vertical-align:middle;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;height:auto;width:auto;fill:">
+                                                      <svg class="svg-image" role="img" style="width:inherit;height:inherit;line-height:inherit;color:inherit;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                         <path fill="currentColor" d="M12 17.007c-3.618 0-7.023.821-10 2.265v2.735h20v-2.735c-2.977-1.444-6.382-2.265-10-2.265zM12 14.793a4 4 0 0 1-4-4v-4a4 4 0 0 1 8 0v4a4 4 0 0 1-4 4z" />
+                                                      </svg>
+                                                   </span>
+                                                </span>
+                                             </div>
+                                             <div class="menu-label__wrapper"><a href= "adminpanel.php?action=logout"span class="menu-label">Sign out</span></a></div>
+                                          </span>
+                                       </button>
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                              <?php
+                           }
+                           ?>
                            <ul class="navigation-menu__pickers">
                               <div class="c2IYi c2IYi-theme-dark">
                                  <div class="c2IYi-country-picker">
-                                    <div><span><button class="react-country-picker-trigger__icon-dropdown Button-No-Standard-Style" aria-label="India"><span class="country-flag circle-style placeholder in"> </span></button></span></div>
+                                    <div><span><button class="react-country-picker-trigger__icon-dropdown Button-No-Standard-Style" aria-label=""><span class=""> </span></button></span></div>
                                  </div>
                                  <div class="c2IYi-currency-picker"></div>
                               </div>

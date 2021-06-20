@@ -1,5 +1,5 @@
-<?php
-
+	<?php
+// session_start();
 
 ?>
 
@@ -11,7 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="http://localhost/corona/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             box-sizing: border-box
@@ -146,7 +146,7 @@
 
 <body class="body">
 
-    <h2 class="center">Home Page</h2>
+    <h2 class="center"></h2>
     <!--<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p> -->
     <div class="slideshow-container">
 
@@ -168,6 +168,11 @@
             <div class="text">Caption Three</div>
         </div>
 
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="images4.jpeg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
 

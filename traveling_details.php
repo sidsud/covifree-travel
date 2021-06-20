@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $db = mysqli_connect("localhost", "root", "", "hetal_db");
 
 if (!$db) {
@@ -12,10 +12,11 @@ if (isset($_POST['submit'])) {
   $state = $_POST['state'];
   $intended_days = $_POST['intended_days'];
   $purpose = $_POST['purpose'];
-  $insert = mysqli_query($db, "INSERT INTO `traveling_mst`(`passport_number`,`state`,`days`,`purpose`) VALUES ('$passport_number','$state','$intended_days','$purpose')");
+  $city = $_POST['city'];
+  $insert = mysqli_query($db, "INSERT INTO `traveling_mst`(`passport_number`,`state`,`days`,`cities`,`purpose`) VALUES ('$passport_number','$state','$intended_days','$city','$purpose')");
 
   if (!$insert) {
-    echo "Records added successfully.";
+    echo "Problem in saving record. " . mysqli_error($db);
   } else {
     if ($_POST['submit'] === 'Continue') {
       header("location:medical_page.php");
@@ -32,9 +33,9 @@ mysqli_close($db); // Close connection
 <br>
 <div>
   <ul class="progressbar">
-    <li class="active">Customer details</li>
-    <li class="active">Travel details</li>
-    <li>Medical details</li>
+    <li class="active">Customer Details</li>
+    <li class="active">Travel Details</li>
+    <li>Medical Details</li>
     <li>Summary</li>
   </ul>
 </div>
@@ -53,7 +54,7 @@ mysqli_close($db); // Close connection
 
 <body class="body">
 
-  <h2 class="center">Travel details</h2>
+  <h2 class="center">Travel Details</h2>
   <!--<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p> -->
 
   <div class="container">
@@ -66,6 +67,27 @@ mysqli_close($db); // Close connection
           <input type="text" id="passport_number"  name="passport_number" placeholder="Number">
         </div>
       </div>
+      
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Country Traveling To</label>
+      </div>
+        <div class="col-75">
+          <select id="" required name="" placeholder="Country">
+
+            <option value="Select">Select</option>
+            <option value="Australia">Australia</option>
+            <option value="India">India</option>
+            <option value="United States of America">United States of America</option>
+            <option value="Canada">Canada</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="New Zeland">New Zeland</option>
+            <option value="Sinapore">Singapore</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+          </select>
+        
+        </div>
+
       <div class="row">
         <div class="col-25">
           <label for="lname">State Traveling To</label>
@@ -99,6 +121,7 @@ mysqli_close($db); // Close connection
         </div>
         <div class="col-75">
           <select required placeholder="Purpose" name="purpose">
+            <option value="Select">Select</option>
             <option value="Business">Business</option>
             <option value="Study">Study</option>
             <option value="Seminar">Seminar</option>
@@ -180,7 +203,7 @@ var residential_address_city = getParameterByName('residential_address_city');
         if(value.name === selectedCity){
           if(value.restrictedOriginCities.includes(residential_address_city)){
             disableSubmit();
-            var error = "You can't travel to " + value.name + " from " + residential_address_city;
+            var error = "Due to Travel Restrictions, You can't travel to " + value.name + " from " + residential_address_city;
             $( "#citySelectError").html(error);
           }
         }

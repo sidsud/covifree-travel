@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $db = mysqli_connect("localhost", "root", "", "hetal_db");
 
 if (!$db) {
@@ -192,17 +192,18 @@ mysqli_close($db); // Close connection
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="fname">Please upload any documentation as proof for your past vaccination </label>
+          <label for="proof">Vaccination proof </label>
         </div>
         <div class="col-75">
-          <input type="file" id="proof" name="vaccination_file">
+          <input type="text" id="proof" name="proof" readonly value="<?php echo $medical_mst['vaccination_file']; ?>">
         </div>
       </div>
 
 
       <div class="row">
 
-        <label for="lname">I declare that all information provided is valid. I will be held accountable for any false information provided.</label>
+        <label for="lname">
+        <input type="checkbox">I declare that all information provided is valid. I will be held accountable for any false information provided.</label>
 
       </div>
 

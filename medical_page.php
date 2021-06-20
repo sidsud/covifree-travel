@@ -1,3 +1,42 @@
+<?php
+session_start();
+$db = mysqli_connect("localhost", "root", "", "hetal_db");
+
+if (!$db) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if (isset($_POST['submit'])) {
+    $disease = implode(",",$_POST['disease']); 
+    $disease_described = $_POST['disease_described'];
+  //  $duration_disease = $_POST['duration_disease'];
+    $vaccination_file = $_POST['vaccination_file'];
+    $vaccine_recevied= $_POST['vaccine_recevied'];
+    $vaccine_name= $_POST['vaccine_name'];
+    $medication = $_POST['medication'];
+    $medication_described = $_POST['medication_described'];
+    $fever = $_POST['fever'];
+    $fever_described = $_POST['fever_described'];
+
+  //  $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`allergies`, `side_effect`, `side_effect_details`) VALUES ('$allergies','$side_effect','$side_effect_details')");
+
+ $insert = mysqli_query($db, "INSERT INTO 
+ `medical_mst`(`disease`,`disease_described`,`vaccine_recevied`,`vaccination`, `vaccination_file`, `medication`, `medication_described`, `fever`, `fever_described`) 
+ VALUES ('$disease','$disease_described','$vaccine_recevied','$vaccine_name','$vaccination_file','$medication','$medication_described','$fever','$fever_described')");
+
+
+    if (!$insert) {
+        echo "Problem in saving record. " . mysqli_error($db);
+    } else {
+        if ($_POST['submit'] === 'Continue') {
+            header("location:summary.php");
+        } else {
+            header("location:medical_page.php");
+        }
+    }
+}
+mysqli_close($db); // Close connection
+?>
 <!DOCTYPE html>
 <html>
 
@@ -11,44 +50,7 @@ ADD COLUMN `vaccine_name` VARCHAR(45) NULL AFTER `vaccine_recevied`;
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php
-
-    $db = mysqli_connect("localhost", "root", "", "hetal_db");
-
-    if (!$db) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    if (isset($_POST['submit'])) {
-        $disease = implode(",",$_POST['disease']); 
-       // $disease_described = $_POST['disease_described'];
-        //$duration_disease = $_POST['duration_disease'];
-        $vaccination_file = $_POST['vaccination_file'];
-        $medication = $_POST['medication'];
-        $medication_described = $_POST['medication_described'];
-        $fever = $_POST['fever'];
-        $fever_described = $_POST['fever_described'];
-        $vaccine_recevied= $_POST['vaccine_recevied'];
-        $vaccine_name= $_POST['vaccine_name'];
-
-      //  $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`allergies`, `side_effect`, `side_effect_details`) VALUES ('$allergies','$side_effect','$side_effect_details')");
-
-     $insert = mysqli_query($db, "INSERT INTO `medical_mst`(`disease`, `vaccination_file`, `medication`, `medication_described`, `fever`, `fever_described`,`vaccine_recevied`,`vaccine_name`) VALUES ('$disease','$vaccination_file','$medication','$medication_described','$fever','$fever_described','$vaccine_recevied','$vaccine_name')");
-
-
-        if (!$insert) {
-            echo "Problem in adding records." . mysqli_error($db);
-        } else {
-            if ($_POST['submit'] === 'Continue') {
-                echo "Records added successfully.";
-                header("location:summary.php");
-            } else {
-                header("location:medical_page.php");
-            }
-        }
-    }
-    mysqli_close($db); // Close connection
-    ?>
+    
 
 <link rel="stylesheet" href="http://localhost/style.css">
 </head>
@@ -81,20 +83,22 @@ ADD COLUMN `vaccine_name` VARCHAR(45) NULL AFTER `vaccine_recevied`;
         <form method="POST">
             <div class="row">
                 <div class="col-25">
-                    <label for="fname">Have you been tested positive for any of the listed disease : </label>
+                    <label for="fname">Have you been tested positive for any of the listed diseases : </label>
                 </div>
                 <div class="col-75">
-                    <input type="checkbox"  value="Covid" name="disease[]"> Covid  <br>
+                    <input type="checkbox"  value="Covid" name="disease[]"> Covid-19 <br>
                     <input type="checkbox" value="SARS" name="disease[]"> SARS <br>
                     <input type="checkbox" value="Influenza" name="disease[]"> Influenza <br>
-                    <input type="checkbox" value="Plague" name="disease[]"> Plague
+                    <input type="checkbox" value="Plague" name="disease[]"> Plague <br>
+                    <input type="checkbox" value="others" name="disease[]"> Others
+                    <input type="text" name="disease_described" placeholder="Please Specify">
                 
                 </div>
             </div>
             
             <div class="row">
                 <div class="col-25">
-                    <label for="fname">Have you recevied the vaccination for selected disease.?</label>
+                    <label for="fname">Have you recevied the vaccination for selected disease?</label>
                 </div>
                 <div class="col-75">
                     <input type="radio" name="vaccine_recevied" value="yes"> Yes
@@ -107,7 +111,14 @@ ADD COLUMN `vaccine_name` VARCHAR(45) NULL AFTER `vaccine_recevied`;
                     <label for="lname">Please Select the Vaccine Name</label>
                 </div>
                 <div class="col-75">
-                <input type="text" required name="vaccine_name">
+                <select required placeholder="Vaccine Name" name="vaccine_name">
+                        <option value="">Select Vaccine</option>
+                        <option value="Pfizer-BioNTech">Pfizer-BioNTech</option>
+                        <option value="Moderna">Moderna</option>
+                        <option value="Johnson & Johnson�s Janssen">Johnson & Johnson�s Janssen</option>
+                        <option value="Sputnik V">Sputnik V</option>
+                        <option value="EV NIIEG">EV NIIEG</option>
+                </select>
                 </div>
             </div>
 

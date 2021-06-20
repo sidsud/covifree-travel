@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $db = mysqli_connect("localhost","root","","hetal_db");
 
 if(!$db)
@@ -57,7 +57,7 @@ mysqli_close($db); // Close connection
 <br>
 <div>
       <ul class="progressbar">
-         <li class="active">Customer details</li>
+         <li class="active">Customer Details</li>
          <li>Step 2</li>
          <li>Step 3</li>
          <li>Step 3</li>
@@ -73,7 +73,7 @@ mysqli_close($db); // Close connection
 </head>
 <body class="body">
 
- <h2 class="center">Customer details</h2>
+ <h2 class="center">Customer Details</h2>
 <!--<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p> -->
 
 <div class="container">
@@ -91,7 +91,7 @@ mysqli_close($db); // Close connection
         <label for="lname">Middle Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="mname"  name="middel_name" placeholder="Middle name">
+        <input type="text" id="mname"  name="middel_name" placeholder="Middle Name">
       </div>
     </div>
     <div class="row">
@@ -99,7 +99,7 @@ mysqli_close($db); // Close connection
           <label for="lname">Last Name</label>
         </div>
         <div class="col-75">
-          <input type="text" id="lname" required name="last_name" placeholder="Last name">
+          <input type="text" id="lname" required name="last_name" placeholder="Last Name">
         </div>
       </div>
       <div class="row">
@@ -115,14 +115,14 @@ mysqli_close($db); // Close connection
           <label for="lname">Residential Address</label>
         </div>
         <div class="col-75">
-          <input type="text" id="residential_address_street" required name="residential_address_street" placeholder="Street">
+          <input type="text" id="residential_address_street" required name="residential_address_street" placeholder="Unit No & Street Name">
           <select id="residential_address_state" required name="residential_address_state" placeholder="State"></select>
           <select id="residential_address_city" required name="residential_address_city" placeholder="City"></select>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">Is your residential address is same as postal address</label>
+          <label for="lname">Is your residential address is same as postal address?</label>
         </div>
         <div class="col-75">
           <input type="radio" id="sameAddress" name="sameAddress" value="yes"> Yes 
@@ -134,7 +134,7 @@ mysqli_close($db); // Close connection
           <label for="lname">Postal Address</label>
         </div>
         <div class="col-75">
-          <input type="text" id="postal_address_street" required name="postal_address_street" placeholder="Street">
+          <input type="text" id="postal_address_street" required name="postal_address_street" placeholder="Unit No & Street Name">
           <select id="postal_address_state" required name="postal_address_state" placeholder="State"></select>
           <select id="postal_address_city" required name="postal_address_city" placeholder="City"></select>
         </div>
